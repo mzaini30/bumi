@@ -1,0 +1,34 @@
+{
+  "name": "bumi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "bumi": "./src/app.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzaini30/bumi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzaini30/bumi/issues"
+  },
+  "homepage": "https://github.com/mzaini30/bumi#readme",
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "rollup": "^2.62.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "devDependencies": {
+    "kumpulan-tools": "^1.0.0",
+    "uniq": "^1.0.1"
+  }
+}
