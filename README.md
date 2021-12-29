@@ -28,7 +28,7 @@ Isi dari `app.js`:
 import uniq from 'uniq'
 
 export default function(array){
-	return uniq(array)
+ return uniq(array)
 }
 ```
 
