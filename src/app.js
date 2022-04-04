@@ -9,9 +9,9 @@ import {readFileSync, writeFileSync} from 'fs'
 const namaFile = process.argv[2]
 const namaVariabel = process.argv[3]
 
-const outputFile = namaFile.replace(/(\.js)$/, '-bumi.js')
-											 .replace(/(\.mjs)$/, '-bumi.js')
-											 .replace(/(\.cjs)$/, '-bumi.js')
+const outputFile = namaFile.replace(/(\.js)$/, '.min.js')
+											 .replace(/(\.mjs)$/, '.min.js')
+											 .replace(/(\.cjs)$/, '.min.js')
 
 const inputOptions = {
 	input: namaFile,
