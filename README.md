@@ -38,7 +38,7 @@ Lalu, menjalankan perintah:
 bumi unik.js unik
 ```
 
-Hasilnya adalah file `unik-bumi.js` yang isinya:
+Hasilnya adalah file `unik.min.js` yang isinya:
 
 ```javascript
 // Nama variabel: unik
@@ -48,7 +48,7 @@ Hasilnya adalah file `unik-bumi.js` yang isinya:
 ## Contoh Cara Menggunakan Hasil Build
 
 ```html
-<script src='unik.js'></script>
+<script src='unik.min.js'></script>
 <script>
 	const angkaUnik = unik([1, 2, 3])
 	console.log(angkaUnik)
