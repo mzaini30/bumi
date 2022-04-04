@@ -54,3 +54,11 @@ Hasilnya adalah file `unik-bumi.js` yang isinya:
 	console.log(angkaUnik)
 </script>
 ```
+
+## Donate
+
+<p align='center'>
+    <a href='https://www.nihbuatjajan.com/mzaini30'>
+        <img src='https://d4xyvrfd64gfm.cloudfront.net/buttons/default-cta.png'/>
+    </a>
+</p>
