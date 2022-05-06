@@ -15,10 +15,12 @@ npm i -g bumi
 ## Cara Pakai
 
 ```bash
-bumi namaFile.js namaVariabel
+bumi namaFile.js
 ```
 
-Nanti, akan menghasilkan `namaFile-bumi.js` yang bisa digunakan untuk browser.
+> Untuk nama file, gunakan `snake_case` maupun `CamelCase`
+
+Nanti, akan menghasilkan `namaFile.min.js` yang bisa digunakan untuk browser.
 
 ## Contoh
 
@@ -35,7 +37,7 @@ export default function(array){
 Lalu, menjalankan perintah:
 
 ```bash
-bumi unik.js unik
+bumi unik.js
 ```
 
 Hasilnya adalah file `unik.min.js` yang isinya:

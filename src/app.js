@@ -7,7 +7,7 @@ import {rollup} from 'rollup'
 import {readFileSync, writeFileSync} from 'fs'
 
 const namaFile = process.argv[2]
-const namaVariabel = process.argv[3]
+// const namaVariabel = process.argv[3]
 
 const outputFile = namaFile.replace(/(\.js)$/, '.min.js')
 											 .replace(/(\.mjs)$/, '.min.js')
@@ -20,7 +20,7 @@ const inputOptions = {
 const outputOptions = {
 	file: outputFile,
 	format: 'umd',
-	name: namaVariabel,
+	name: namaFile,
 	plugins: [uglify()]
 }
 
@@ -30,7 +30,7 @@ async function build(){
 	const selesai = await bundle.write(outputOptions)
 	if (selesai) {
 		const hasilnya = readFileSync(outputFile).toString()
-		const tambahan = `// Nama variabel: ${namaVariabel}`
+		const tambahan = `// Nama variabel: ${namaFile}`
 		const jadinya = `${tambahan}\n${hasilnya}`
 		writeFileSync(outputFile, jadinya)
 	}
