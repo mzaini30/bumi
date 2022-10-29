@@ -1,6 +1,6 @@
 {
   "name": "bumi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tools untuk membumikan npm package",
   "main": "index.js",
   "scripts": {
