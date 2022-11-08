@@ -35,7 +35,10 @@ async function build() {
   const { output } = await bundle.generate(outputOptions);
   const selesai = await bundle.write(outputOptions);
   if (selesai) {
-    const hasilnya = readFileSync(outputFile).toString();
+    let filenya = readFileSync(outputFile).toString();
+    filenya = filenya.replaceAll("https://cdn.skypack.dev/", "");
+
+    const hasilnya = filenya;
     const tambahan = `// Nama variabel: ${nama_variabel}`;
     const jadinya = `${tambahan}\n${hasilnya}`;
     writeFileSync(outputFile, jadinya);
