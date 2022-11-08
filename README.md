@@ -1,66 +1,91 @@
-# Bumi
+# bumi
 
 <p align='center'>
-	<img src='src/bumi.jpg'/>
+<img src='src/bumi.jpg'/>
 </p>
 
-Tools untuk membumikan JavaScript module dari NPM ke JavaScript UMD buat browser.
+Tools for grounding JavaScript modules from NPM to JavaScript UMD for browsers.
 
-## Instalasi
+## Installation
 
 ```bash
 npm i -g bumi
 ```
 
-## Cara Pakai
+## How to use
 
 ```bash
-bumi namaFile.js
+bumi filename.js
 ```
 
-> Untuk nama file, gunakan `snake_case` maupun `CamelCase`
+> For filename use `snake_case` or `CamelCase`
 
-Nanti, akan menghasilkan `namaFile.min.js` yang bisa digunakan untuk browser.
+Later, it will generate `filename.min.js` which can be used for browsers.
 
-## Contoh
+## Example
 
-Isi dari `unik.js`:
+Contents of `unique.js`:
 
 ```javascript
-import uniq from 'uniq'
+import uniq from "uniq";
 
-export default function(array){
- return uniq(array)
+export default function (array) {
+  return uniq(array);
 }
 ```
 
-Lalu, menjalankan perintah:
+Then, run the command:
 
 ```bash
-bumi unik.js
+bumi unique.js
 ```
 
-Hasilnya adalah file `unik.min.js` yang isinya:
+The result is a `unique.min.js` file which contains:
 
 ```javascript
-// Nama variabel: unik
-!function(n,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(n="undefined"!=typeof globalThis?globalThis:n||self).unik=e()}(this,function(){"use strict";var e=function(n,e,t){return 0===n.length?n:e?(t||n.sort(e),function(n,e){for(var t,o=1,r=n.length,f=n[0],u=(n[0],1);u<r;++u)t=f,e(f=n[u],t)&&(u!==o?n[o++]=f:o++);return n.length=o,n}(n,e)):(t||n.sort(),function(n){for(var e=1,t=n.length,o=n[0],r=n[0],f=1;f<t;++f,r=o)r=o,(o=n[f])!==r&&(f!==e?n[e++]=o:e++);return n.length=e,n}(n))};return function(n){return e(n)}});
+// Variable name: unique
+!(function (n, e) {
+  "object" == typeof exports && "undefined" != typeof module
+    ? (module.exports = e())
+    : "function" == typeof define && define.amd
+    ? define(e)
+    : ((n = " undefined" != typeof globalThis ? globalThis : n || self).unique =
+        e());
+})(this, function () {
+  "use strict";
+  var e = function (n, e, t) {
+    return 0 === n.length
+      ? n
+      : e
+      ? (t || n.sort(e),
+        (function (n, e) {
+          for (var t, o = 1, r = n.length, f = n[0], u = (n[0], 1); u < r; ++u)
+            (t = f), e((f = n[u]), t) && (u !== o ? (n[o++] = f) : o++);
+          return (n.length = o), n;
+        })(n, e))
+      : (t || n.sort(),
+        (function (n) {
+          for (
+            var e = 1, t = n.length, o = n[0], r = n[0], f = 1;
+            f < t;
+            ++f, r = o
+          )
+            (r = o), (o = n[f]) !== r && (f !== e ? (n[e++] = o) : e++);
+          return (n.length = e), n;
+        })(n));
+  };
+  return function (n) {
+    return e(n);
+  };
+});
 ```
 
-## Contoh Cara Menggunakan Hasil Build
+## Example of How to Use Build Results
 
 ```html
-<script src='unik.min.js'></script>
+<script src="unique.min.js"></script>
 <script>
-	const angkaUnik = unik([1, 2, 3])
-	console.log(angkaUnik)
+  const unique_number = unique([1, 2, 3]);
+  console.log(unique_number);
 </script>
 ```
-
-## Donate
-
-<p align='center'>
-    <a href='https://www.nihbuatjajan.com/mzaini30'>
-        <img src='https://d4xyvrfd64gfm.cloudfront.net/buttons/default-cta.png'/>
-    </a>
-</p>

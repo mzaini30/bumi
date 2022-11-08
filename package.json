@@ -1,7 +1,7 @@
 {
   "name": "bumi",
-  "version": "1.0.3",
-  "description": "Tools untuk membumikan npm package",
+  "version": "1.1.0",
+  "description": "Tools for grounding JavaScript modules from NPM to JavaScript UMD for browsers.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
