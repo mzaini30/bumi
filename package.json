@@ -32,6 +32,9 @@
     "rollup-plugin-uglify": "^6.0.4"
   },
   "devDependencies": {
+    "@rollup/plugin-replace": "^5.0.1",
+    "is-even": "^1.0.0",
+    "is-odd": "^3.0.1",
     "kumpulan-tools": "^1.0.0",
     "uniq": "^1.0.1"
   }

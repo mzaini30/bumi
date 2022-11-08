@@ -5,6 +5,7 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { uglify } from "rollup-plugin-uglify";
 import { rollup } from "rollup";
 import { readFileSync, writeFileSync } from "fs";
+import replace from "@rollup/plugin-replace";
 
 const namaFile = process.argv[2];
 // const namaVariabel = process.argv[3]
@@ -21,7 +22,11 @@ const nama_variabel = namaFile
 
 const inputOptions = {
   input: namaFile,
-  plugins: [nodeResolve(), commonjs()],
+  plugins: [
+    nodeResolve(),
+    commonjs(),
+    replace({ "https://cdn.skypack.dev/": "", preventAssignment: true }),
+  ],
 };
 const outputOptions = {
   file: outputFile,
@@ -35,10 +40,10 @@ async function build() {
   const { output } = await bundle.generate(outputOptions);
   const selesai = await bundle.write(outputOptions);
   if (selesai) {
-    let filenya = readFileSync(outputFile).toString();
-    filenya = filenya.replaceAll("https://cdn.skypack.dev/", "");
+    // let filenya = readFileSync(outputFile).toString();
+    // filenya = filenya.replaceAll("https://cdn.skypack.dev/", "");
 
-    const hasilnya = filenya;
+    const hasilnya = readFileSync(outputFile).toString();
     const tambahan = `// Nama variabel: ${nama_variabel}`;
     const jadinya = `${tambahan}\n${hasilnya}`;
     writeFileSync(outputFile, jadinya);
